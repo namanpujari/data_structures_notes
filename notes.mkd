@@ -47,16 +47,14 @@ What are Preconditions and Postconditions?
 	// Postcondition: The square root of x has been written to the
 	// standard output.
 	{
-
+	// Code...
 	}
 
 	The precondition and postcondition are pretty much like the documentation
 	of the program. They appear as comments in a program. They are usually
-	placed after the function's parameter list.  
-
-	Violating the precondition might even crash a computer. It is important to
-	ensure that a function is called with its proper preconditions and that it
-	returns the proper postconditions.  
+	placed after the function's parameter list. Violating the precondition might 
+	even crash a computer. It is important to ensure that a function is called 
+	with its proper preconditions and that it returns the proper postconditions.  
 
 	void write_sqrt(double x)
 	// Precondition: x >= 0
@@ -64,8 +62,18 @@ What are Preconditions and Postconditions?
 	// standard output.
 	{
 		assert(x >= 0);
-
-
+		// Code...
 	}
+
+Running Time Analysis - Big O
+-----------------------------
+	Time analysis is very important for an algorithm. It is often the case
+	that a better order algorithm (in terms of time analysis) is more
+	important than simply having a very fast processor. 
+
+	There are three main types of orders: linear, quadratic and logarithmic.
+	Out of these, the fastest and hence most efficient is logarithmic time.
+	The notation for time analysis is O(n), where n is indicative of the time
+	taken by a process. 
 
 
