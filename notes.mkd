@@ -74,6 +74,36 @@ Running Time Analysis - Big O
 	There are three main types of orders: linear, quadratic and logarithmic.
 	Out of these, the fastest and hence most efficient is logarithmic time.
 	The notation for time analysis is O(n), where n is indicative of the time
-	taken by a process. 
+	taken by a process.
+
+	O can be determined by considering the number of processes carried out by
+	a certain algorithm or procedure. Even a for loop has 2 processes before
+	it actually carries out whatever is nestled within it. These processes
+	are:
+		1. Check whether i (the iterator) is less than the limit specified
+		2. After completion of the procedure within the for loop, increment
+		   the iterator by 1. 
+	It also has an initial procedure of assigning the initial value to the
+	iterator. So, at the very least a for loop has 2n+1 processes and is O(n).
+
+
+	for(i = 0; i < strlen(str); i++) {
+		c = str[i];
+		cout << c;
+	}
+
+	This is an example of O(n^2) since in the for loop, another for loop is
+	running. (strlen() is essentially a for loop that measures the length of a
+	string of chars). To improve this we can do:
+
+	n = strlen(str);
+	for(i = 0; i < n; i++) {
+		c = str[i];
+		cout << c;
+	} 
+
+	This is now faster since it is O(n).
+
+	
 
 
