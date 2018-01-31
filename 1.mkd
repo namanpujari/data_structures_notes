@@ -1,0 +1,111 @@
+# Data Structures Section EF, Professor Zhu
+
+### Lecture 1
+
+Importance (WHY)
+---------------
+	Data structures and algorithms are the two cores of programming today.
+	Data structures are used to organize data, while algorithms are used to
+	manipulate the same data. The behavior of Abstract Data Types (ADTs) in
+	this course is a cut-down version of Standard Template Library (STL) in
+	C++. One of the most important parts of programming is object-oriented
+	programming. Other such parts include recursion, sorting and searching. We
+	will lay the foundation for these.
+
+Goals
+-----
+	To understand the data types inside out, not just have a basic idea of
+	what the structures do. We also want to implement these structures as
+	classes in C++. With this knowledge, we want to understand which data
+	structures are appropriate in different scenarios. Finally, we want to be
+	familiar with OOP and software development.
+	
+Phases of Software Development
+------------------------------
+	Basic Design Strategy has four primary steps. First, we must specify the
+	problem, which consists of outlining the basic input/output (I/O). Next,
+	we have to design data structures and algorithms (pseudo code) and then
+	implement it in a language such as C++. Finally, when the code is
+	complete, we have to test and debug the program manually. 
+
+	Design technique mainly consists of decomposing the problem by splitting
+	it up into small, doable steps that contribute to the overall goal. Two
+	important issues are pre-conditions and post-conditions, and running time
+	analysis. Time analysis is very important as it is indicative of the
+	efficiency of software.
+
+What are Preconditions and Postconditions?
+------------------------------------------
+	The precondition statement indicates what must be true before the function
+	is called. It is very important to understand WHAT exactly is being
+	processed/worked with before thinking about any details about the code.
+	The postcondition statement indicates what must be true, or what the
+	state must be, once the program completes its work. Here is an example:
+
+	void write_sqrt(double x)
+	// Precondition: x >= 0
+	// Postcondition: The square root of x has been written to the
+	// standard output.
+	{
+	// Code...
+	}
+
+	The precondition and postcondition are pretty much like the documentation
+	of the program. They appear as comments in a program. They are usually
+	placed after the function's parameter list. Violating the precondition might 
+	even crash a computer. It is important to ensure that a function is called 
+	with its proper preconditions and that it returns the proper postconditions.  
+
+	void write_sqrt(double x)
+	// Precondition: x >= 0
+	// Postcondition: The square root of x has been written to the
+	// standard output.
+	{
+		assert(x >= 0);
+		// Code...
+	}
+
+Running Time Analysis - Big O
+-----------------------------
+	Time analysis is very important for an algorithm. It is often the case
+	that a better order algorithm (in terms of time analysis) is more
+	important than simply having a very fast processor. 
+
+	There are three main types of orders: linear, quadratic and logarithmic.
+	Out of these, the fastest and hence most efficient is logarithmic time.
+	The notation for time analysis is O(n), where n is indicative of the time
+	taken by a process.
+
+	O can be determined by considering the number of processes carried out by
+	a certain algorithm or procedure. Even a for loop has 2 processes before
+	it actually carries out whatever is nestled within it. These processes
+	are:
+		1. Check whether i (the iterator) is less than the limit specified
+		2. After completion of the procedure within the for loop, increment
+		   the iterator by 1. 
+	It also has an initial procedure of assigning the initial value to the
+	iterator. So, at the very least a for loop has 2n+1 processes and is O(n).
+
+
+	for(i = 0; i < strlen(str); i++) {
+		c = str[i];
+		cout << c;
+	}
+
+	This is an example of O(n^2) since in the for loop, another for loop is
+	running. (strlen() is essentially a for loop that measures the length of a
+	string of chars). To improve this we can do:
+
+	n = strlen(str);
+	for(i = 0; i < n; i++) {
+		c = str[i];
+		cout << c;
+	} 
+
+	This is now faster since it is O(n).
+
+	Office Hour:
+		Monday 11:30 - 1:30
+		NAC 8/211
+
+
