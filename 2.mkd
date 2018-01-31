@@ -1,0 +1,33 @@
+ADT and C++ Classes
+-------------------
+	ADT mean abstract data type and cant be implemented using classes in C++.
+	Classes are basically mechanisms to create objects and member functions.
+	Objects can contain information specifically pertaining to it. Supporting
+	information is usually hidden. Here we define a point ADT (an abstract
+	data type for a mathematical point in, say, a cartesian graph). 
+
+	A data type to store and manipulate a single point on a plane:
+		We want to initialize it with two points: x and y.
+		We want to be able to retrieve these two points.
+		We want to be able to shift it.
+
+	Private variables/methods in classes are those that cannot be idrectly
+	used by other classes or any other function or procedure outside the scope
+	of the class. They can only be used by methods within the scope of the
+	class. Public functions are inheritable by other classes.
+
+	The processes in the constructor are carried out when an object of a
+	certain class is first instantiated. The constructor has *no* return type
+	and is written in this nature:
+		
+		point::point(double x_int, double y_int) {
+			x = x_int;
+			y = y_int; // Here x and y are already defined as private
+					   // properties.
+		}
+
+	There can be multiple constructors, differentiated using the logic of
+	function overloading (differentiating based off of two functions'
+	parameters). 
+
+
