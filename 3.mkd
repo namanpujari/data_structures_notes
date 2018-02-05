@@ -6,7 +6,23 @@ Value Semantics
 ---------------
 Copying instances (objects) of a certain class also has to be defined.
 In order to accomplish this task we can implement something known as the
-copy constructor. By default, this is present in all class definitions,
-but we can create a custom one as well. Consider the example below:
-
+assignment operator or copy constructor. By default, this is present in
+all class definitions, but we can create a custom one as well. Consider 
+the example below:
+```
+point p1(-1.0, 0.8), p2;
+// We see that in the first instance, we use our custom constructor that 
+// assigns value to the object. p2's values are assigned by the default 
+// constructor, or another defined constructor that takes no values. 
+p2 = p1;
+// p2's values are altered using the assignment operator (by method of
+// operator overload). 
+```
+Now consider this example: 
+```
+point p1(-1.0, 0.8);
+point p2(p1);
+// p2 is no instantiated, taking p1 as its parameter. By method of the copy
+// constructor, it takes all of the values in p1. 
+```
 	
