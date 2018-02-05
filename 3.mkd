@@ -1,0 +1,12 @@
+# Data Structures Section EF, Professor Zhu
+
+### Lecture 3
+
+Value Semantics
+---------------
+Copying instances (objects) of a certain class also has to be defined.
+In order to accomplish this task we can implement something known as the
+copy constructor. By default, this is present in all class definitions,
+but we can create a custom one as well. Consider the example below:
+
+	

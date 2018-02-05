@@ -1,3 +1,7 @@
+# Data Structures Section EF, Professor Zhu
+
+### Lecture 2
+
 ADT and C++ Classes
 -------------------
 	ADT mean abstract data type and cant be implemented using classes in C++.
