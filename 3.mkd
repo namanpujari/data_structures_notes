@@ -4,25 +4,38 @@
 
 Value Semantics
 ---------------
-Copying instances (objects) of a certain class also has to be defined.
-In order to accomplish this task we can implement something known as the
-assignment operator or copy constructor. By default, this is present in
-all class definitions, but we can create a custom one as well. Consider 
-the example below:
-```
-point p1(-1.0, 0.8), p2;
-// We see that in the first instance, we use our custom constructor that 
-// assigns value to the object. p2's values are assigned by the default 
-// constructor, or another defined constructor that takes no values. 
-p2 = p1;
-// p2's values are altered using the assignment operator (by method of
-// operator overload). 
-```
-Now consider this example: 
-```
-point p1(-1.0, 0.8);
-point p2(p1);
-// p2 is no instantiated, taking p1 as its parameter. By method of the copy
-// constructor, it takes all of the values in p1. 
-```
+	Copying instances (objects) of a certain class also has to be defined.
+	In order to accomplish this task we can implement something known as the
+	assignment operator or copy constructor. By default, this is present in
+	all class definitions, but we can create a custom one as well. Consider 
+	the example below:
+
+	point p1(-1.0, 0.8), p2;
+	// We see that in the first instance, we use our custom constructor that 
+	// assigns value to the object. p2's values are assigned by the default 
+	// constructor, or another defined constructor that takes no values. 
+	p2 = p1;
+	// p2's values are altered using the assignment operator (by method of
+	// operator overload). 
+	
+	Now consider this example: 
+
+	point p1(-1.0, 0.8);
+	point p2(p1);
+	// p2 is no instantiated, taking p1 as its parameter. By method of the copy
+	// constructor, it takes all of the values in p1. 
+	// An alternative way of using the copy constructor is:
+	point p2 = p1;
+
+Difference between Assignment and Copy Constructor
+--------------------------------------------------
+	Assignment is used the when the value of an ALREADY INSTANTIATED object are being
+	transferred to an ALREADY INSTANTIATED object. However, the copy
+	constructor can also be used in a form similar to the assignment (point p2
+	= p1) because the compiler is, on that very line INSTANTIATING the point
+	object and takes the value of p1. Basically, p2 is being constructed
+	using the values of 1. 
+
+
+
 	
