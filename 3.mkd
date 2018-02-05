@@ -36,6 +36,37 @@ Difference between Assignment and Copy Constructor
 	object and takes the value of p1. Basically, p2 is being constructed
 	using the values of 1. 
 
+Namespace
+---------
+	Namespace is a way of categorizing codes under user-defined labels. For
+	example, one may implement the class hello in two different
+	ways. Using namespace, we can put a	label in front of both of these 
+	implementations. See the example below:
+
+	namespace naman {
+		class hello {
+			// Something
+		};
+	}
+
+	namespace michael {
+		class hello {
+			// Something else
+		};
+	}
+
+	When the user wants to implement the function hello() written by Michael,
+	they can, at the beginning of their main.cpp file write: 
+		
+	using michael::hello
+
+	Now the programmer can reference Michael's hello class by instantiating an
+	object of class hello. This is synonymous to telling a traveler to go
+	Sunset Park and defining which city that park is located, as a park with
+	the same name may be located in various locations. 
+
+
+
 
 
 	
