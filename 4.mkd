@@ -1,0 +1,33 @@
+# Data Structures Section EF, Professor Zhu
+
+### Lecture 3
+
+Bag
+---
+	A bag is an data structure that allows for the containment of numbers
+	regardless of number of occurences and the order in which they are
+	inserted.
+
+	The properties of bags include
+		1. Beginning with an 'initial' state where the bag is empty
+		2. The ability to insert numbers without any restrictions such as
+		   re-occurrence, etc.
+		3. The ability to erase a number from the bag.
+		4. The ability to count how many numbers are contained inside the bag.
+
+	Bags can be implemented using C++ classes and can give be given class
+	properties, methods, etc. 
+
+Static Variables
+----------------
+	Static variables are those that are used *universally* among every
+	instance of a class. Essentially, if we create 5 bags, then for example,
+	static const size_t CAPACITY would indicate that CAPACITY is used for
+	every object of class bag. Not every bag will have a copy of CAPACITY.
+	There will only be one memory address for CAPACITY, and each object
+	references it. 
+
+	This disallows us to have bags with different capacities, however. This is
+	the reason why these types of bags are known as *static bags*. 
+
+

@@ -56,15 +56,16 @@ Namespace
 	}
 
 	When the user wants to implement the function hello() written by Michael,
-	they can, at the beginning of their main.cpp file write: 
+	they can, at the beginning of their main.cpp file, write: 
 		
 	using michael::hello
 
 	Now the programmer can reference Michael's hello class by instantiating an
 	object of class hello. This is synonymous to telling a traveler to go
-	Sunset Park and defining which city that park is located, as a park with
+	Sunset Park and defining which city that park is located in, as a park with
 	the same name may be located in various locations. 
 
+ 
 
 
 
