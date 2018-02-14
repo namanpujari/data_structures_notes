@@ -79,9 +79,24 @@ The new Operator
 	As we can see above, the statements 'p1[2]' and '*(p1 + 2)' are the same
 	things. 
 
+Dynamic Objects of a Class
+--------------------------
+	Consider a class 'point' which is an ADT for a point on a cartesian plot.
+	We can create a pointer for such an object and do basically all the things
+	we could do while handling other datatypes with pointers. See the code
+	below:
 
+	point *p1; // There is nothing done here; constructor is not called.
+	p1 = new point(1.0, 2.0); // The constructor is called here.
+	cout << (*p1).get_x();
+	cout << p1->get_x(); // Both statements do the same things. I prefer this.
 
-
-
+Failure of the new Operator
+---------------------------
+	The new operator may also fail. Since it takes up space in the heap,
+	overusing it without proper documentation of what uses new can cause in
+	bad_alloc error. This basically means that no more space is left to
+	allocate memory. A good method is garbage collection by using the 'delete'
+	Operator.
 
 
