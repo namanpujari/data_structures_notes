@@ -1,0 +1,87 @@
+# Data Structures Section EF, Professor Zhu
+
+### Lecture 5
+
+Dynamic Array - Why do we need it?
+----------------------------------
+	A constant value for the capacity can prove to be one of two things:
+	it can either be too small, or to large (in this case it will be
+	wasteful). Having a capacity that is flexible to the how many entries the
+	user puts inside it makes the data structure much more efficient and
+	viable.
+
+Pointers
+--------
+	When an integer is created in C++ code, it is assigned a memory location
+	(named using hexadecimal) in the stack, which is static local memory. In
+	that memory address, a value is stored, which is actually the value
+	defined in the code. So, if we have the following statements:
+
+	int i = 42;
+	cout << &i;
+
+	This would return some mumbo-jumbo hexadecimal address that corresponds to
+	where the integer was stored. By the way, the size for an integer is 4
+	bytes. However, if we add the following:
+
+	int *i_ptr;
+	i_ptr = &i;
+
+	This would initate a new, memory location holding (a pointer) data type
+	called i_ptr. The second line would give i_ptr the memory location of i.
+	We may get the value of i_ptr by dereferencing it using *.
+
+	cout << *i_ptr; // --> This would return 42.
+
+	& may also be used to pass a by-reference parameter to a function or
+	method in a class. * may be dangerous as there is no limitation as to what
+	memory address it can jump to. 
+
+Assignment Operators with pointers
+----------------------------------
+	We can do multiple things with assignments. Look at the following code:
+
+	int i = 42;
+	int j = 20;
+	int *p1, *p2;
+	p1 = &i;
+	p2 = &j;
+	*p2 = *p1;
+
+	In the code above p1 and p2 are defined to contain the memory address of i
+	and j respectively. Later, p2's value is changed my method of
+	dereferencing. The value of p2 memory location is changed to value of p1
+	memory location. In other words, j = i.
+
+The new Operator
+----------------
+	The 'new' operator can define datatypes in the heap. This memory can be
+	changed dynamically, and during execution. Static memory is pre-allocated
+	upon compilation. We use pointers to 'point' towards newly created
+	variables in the heap. 
+
+	int* p1 = new int;
+	*p1 = 20;
+
+	A new variable has been created in the heap, with its value being 20. This
+	has been created upon execution of the program. We can also create arrays
+	using this 'new' method of declaring dynamic memory. Consider the
+	following code:
+
+	int *p1;
+	p1 = new int[4];
+	p1[2] = 20;
+	cout << *(p1 + 2); // p1, in reality, just holds the memory location of
+						  where the first (0th element) resides. We can use +
+						  to make the pointer jump and point to another
+						  element in the array.
+
+	As we can see above, the statements 'p1[2]' and '*(p1 + 2)' are the same
+	things. 
+
+
+
+
+
+
+
