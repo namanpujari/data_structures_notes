@@ -1,0 +1,45 @@
+# Data Structures Section EF, Professor Zhu
+
+### Lecture 6
+
+Value/Reference Parameters
+--------------------------
+	Calling parameters by value consists of making a copy of it into another
+	memory address. However, calling by reference gives the original memory
+	address to the function and hence, gives permission to change the values
+	of the one and only variable in the memory. 
+
+	An interesting thing to note about arrays is that, in saying int var[30]
+	we are actually populating an initial memory address with the memory
+	address of the first element. 
+
+	Consider the following: the memory address of var is 900, which is a
+	pointer. This pointer 'points' to 904, which is the memory address of the
+	first element in the array. If we execute the following code:
+
+	for(int i = 0; i < size; i++) {
+		*(data + i) = 20;
+	}
+
+	Then, starting from 904, and going in steps of 4 (defined by the
+	datatype), we are putting the value 20 in each slot of the array. 
+
+	0. 904 -> 20
+	1. 908 -> 20
+	2. 912 -> 20
+	...
+	29. 904 + (4 * 29) -> 20
+
+	What happens if we call this array by value? The compiler makes a copy of
+	the array pointer only. It does not simply copy all the values in the
+	array sequentially into the memory; it just tells the copied pointer where
+	the original array began, and from that point the copy can handle all the
+	functionality it needs. 
+
+Memory Release and the Delete Function
+--------------------------------------
+	If an array is created locally (on the stack, with a fixed size), then the
+	compiler does a good job releasing that memory. However, if a dynamic
+	array is constructed using the 'new' method, then it will remain allocated
+	until the 'delete' function is used to release them.
+
