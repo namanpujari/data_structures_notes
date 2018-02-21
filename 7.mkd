@@ -1,0 +1,39 @@
+# Data Structures Section EF, Professor Zhu
+
+### Lecture 7
+
+Dynamic Classes
+---------------
+	The dynamic bag has a capacity variable that can take on multiple values
+	depending on the needs of the users. That being said, the private section
+	of bag2.h, the definition of a dynamic bag class will be:
+
+	class bag {
+		public:
+			...
+		private:
+			value_type *data;
+			size_type used;
+			size_type capacity;
+	};
+
+	An interesting thing to note here is that data is a pointer, indicating
+	the presence of a dynamic array to store values in the bag ADT. The
+	constructor of the bag is similar to the static bag. It will, in the
+	beginning, take an initial capacity and assign it the data pointer. 
+
+	constructor(PARAMS) --> how big is the initial capacity?
+	insert(PARAMS) --> if bag is full, how many more?
+		If the bag is full, then we can resize data, which is possible because
+		it is a dynamic array.
+	+/+= operators(PARAMS) --> how to combine two bags?
+	reserve(PARAMS) --> explicitly adjust the capacity 
+
+Copying Dynamic Bag
+-------------------
+	If we use the default = operator we also copy the data pointer in the
+	source, making both the source and the receiving bag point to the same
+	dynamic array. We can go past this problem by deleting the dynamic array
+	on the receiving end, initializing a new dynamic array, and then
+	sequentially copying the values from the source dynamic array to the
+	receiving dynamic array.
