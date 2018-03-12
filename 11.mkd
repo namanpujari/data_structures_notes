@@ -1,0 +1,32 @@
+# Data Structures Section EF, Professor Zhu
+
+### Lecture 11 
+
+Template Classes
+----------------
+	Imagine we have a function 'maximum' that takes in two variables and finds the
+	larger of the two. While we can define the two parameters to be integers, this
+	approach is very limiting in the sense that we cannot use other data-types. A
+	way around this problem may be using typedef int data_type, and replace every
+	int with typedef. However, this does not solve anything. We still cannot use 
+	double unless we completely change the typedef statement and recompile the C++ 
+	program.
+
+	This is the motivation to implement the template function: to build a method
+	that does not care about data_type. We can use the following code to build
+	towards this approach:
+
+	template <class Item> 
+	Item maximum(Item a, Item b) {
+		if(a > b) return a;
+		else return b;
+	}
+
+	If we decide to execute the line cout << maximum(1,2); then the compiler
+	will create two Item objects that take integer values. 
+
+	We need to make sure the > operator and the copy constructor is defined.
+
+Iterators
+---------
+	

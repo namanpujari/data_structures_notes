@@ -1,0 +1,25 @@
+# Data Structures Section EF, Professor Zhu
+
+### Lecture 8
+
+Time Analysis of the Bag Class
+------------------------------
+	count - the number of occurrences
+		This is O(n) because we are conducting a for loop across
+		the bag to see how many members are of a given type.
+	erase_one - remove one from the bag
+		This is also O(n), though it can be O(1) at best, if the item to be
+		removed is the first one in the bag. Otherwise, if it is the last
+		(worst case) then we would have to conduct a for loop to find and
+		remove it. 
+	erase - remove all
+		This is O(n). In its best case it does n processes, as erase does not
+		stop at the first occurrence of an item. In its worst case it deletes
+		every item (if all items in the bag are the same, and are the ones
+		asked to be deleted by the user). 
+	insert - put one item at the end
+		This is also O(n), though in most cases it is a constant O(1). It can
+		be linear in its worst case, it the size of the dynamic array is
+		exhausted. In this case, a new array has to be constructed, with a for
+		loop being used to copy over values from the first array.
+	
