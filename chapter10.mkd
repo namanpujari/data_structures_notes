@@ -1,0 +1,98 @@
+Chapter 10
+----------
+
+Binary Trees are special data stuctures that are non-linear. This essentially
+means that trees do not follow the standard left-to-right method of data
+traversal. Rather, the link between two data entries is decision-based, and
+wholly depends on the relation between the former and latter pieces of data.
+
+Binary trees are shaped like upside-down real-life trees. Here are important
+parts of a binary tree:
+
+1. The root node
+	Is the very first entry in the tree. Every entry after this MUST be a
+	descendent of the root note
+2. The node
+	Fundamental building block of a tree. Each node contains a piece of
+	information, if it exists. Nodes, in a binary tree, branch out and produce
+	two other nodes. That being said, each *parent node* produces two
+	*children*. 
+3. Leafs 
+	Leafs are basically nodes with no children. There are the final pieces of
+	data in a binary tree
+
+The *depth* of a tree is the deepest layer in an entire binary tree. 
+
+It's important to note that each node has a left and right child. The data in
+the *left* child is *always* smaller in magnitude. The data in the *right*
+child is *always* greater in magnitude (than the parent node). 
+
+*Complete* Trees are those in which the n-1 depth layer (n being the deepest
+layer) has nodes with every link (left and right child) satisfied. Basically,
+a complete tree is a *full* binary tree if the deepest layer were to be sliced
+off.
+
+*Full* Trees are those in which every leaf has the same depth, and each
+non-leaf has two children. It is important to note that a binary tree with
+only the root present *is a full tree*. 
+
+*If represented as an array*, trees have the following indexing scheme:
+	The root node is always at index 0. Every node following this adheres to
+	this common law: For the left child, the index is (2*i)+1 (given that i is the
+	index of the current node). For the right child, the index is (2*i)+2.
+
+	Traversing back from child to parent is a little bit more tricky. Since
+	the parent of any child (in a binary tree --> left *or* right) is the
+	same, the formula is (i-2)/2, where / is integer division (floor), and i
+	is the index of a non-root node.
+
+It is important to note that no specific *link* is present between the array
+(like in the case of the conventional linked list). The relation between data
+entries is specified using formulas.
+
+The links between *nodes*, in the contexts of binary trees, however, are
+clearly defined. Each node, in place of having a data field, has two node
+pointers, left and right.
+
+``'
+...
+private:
+	Item data_field // Using a template
+	binary_tree_node *left_node;
+	binary_tree_node *right_node;
+```
+
+# Tree Traversal
+
+There are many ways of going through data in trees. This may be trivial to
+think about, but is highly important. We have the following:
+
+1. Pre-order traversal: In this case we have the left side of the binary tree
+   processed *first*. That being said, every *left* child is printed out, not
+   just the *left side* in general. Like a chain, left children are processed
+   across all depths of the tree. This is done recursion. 
+
+   Example:
+   
+   void print_pre_order(*tree_node) {
+		cout << tree_node->data_field();
+   		print_pre_order(tree_node->left_ptr());
+		print_pre_order(tree_node->right_ptr());
+   }
+
+   Note the overall structure of this: the node is printed, then the left_ptr
+   is travelled to, and that again is printed until the left traversal chain
+   is broken. Then the right_ptr value is printed.
+
+2. In-order traversal: 1. Traverse down to left most point, and recursively go
+   up, processing along the way. Process root, then go down right path while
+   processing all the way. Same code as above except,
+   print_pre_oder(tree_node->left_ptr()); and cout << tree_node->data_field();
+   swap places.
+
+3. Post-order traversal: 1. Process nodes in left side 2. Process nodes in
+   right side. 3. Process root. 
+
+
+
+
